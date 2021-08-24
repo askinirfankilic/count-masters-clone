@@ -13,10 +13,6 @@ Oyunun ne kadar oynanabilir bir seviyeye çekilirse hata olmazsa senin için art
 
 Projeyi bitirince git hesabına yükleyip benimle paylaşmanı isteyeceğim,
 
-
-Github kullanıcı adım: arasaydogan
-e-mail: aras.aydogan.one@gmail.com
-
 Unity version: 2019 LTS (2019.4.29f1)
 
 Bir sorun olursa mesaj atmaktan çekinmeyin
