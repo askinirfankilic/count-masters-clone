@@ -383,6 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 811233686}
   - component: {fileID: 811233685}
+  - component: {fileID: 811233687}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -421,6 +422,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &811233687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811233684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf46345e2d649c4faa6d38a4486c5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  automatedCharacterCount: 1
+  automatedCharacterPrefab: {fileID: 2826022412780142910, guid: 3b31130f41f9f8b4ab363f2e43ecb7fe,
+    type: 3}
 --- !u!4 &837323834 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3214354312714408392, guid: 5a0a3f9e39c930e4c86410709fe05b69,
@@ -800,10 +816,6 @@ PrefabInstance:
       propertyPath: destination
       value: 
       objectReference: {fileID: 811233686}
-    - target: {fileID: 1915921886, guid: 3b31130f41f9f8b4ab363f2e43ecb7fe, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2826022412780142906, guid: 3b31130f41f9f8b4ab363f2e43ecb7fe,
         type: 3}
       propertyPath: m_RootOrder
