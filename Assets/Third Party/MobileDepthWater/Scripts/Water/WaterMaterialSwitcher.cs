@@ -10,7 +10,7 @@ namespace Assets.Scripts.Water
     /// </summary>
     public class WaterMaterialSwitcher : MonoBehaviour
     {
-        [SerializeField] private Renderer renderer;
+        [SerializeField] private new Renderer renderer;
         [SerializeField] private Material waterMaterial;
         [SerializeField] private Material diffuseMaterial;
 

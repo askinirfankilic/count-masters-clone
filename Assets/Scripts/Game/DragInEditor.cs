@@ -5,7 +5,7 @@ using UnityEngine;
 public class DragInEditor : MonoBehaviour
 {
     [DraggablePoint] public Vector3 spawnPosition;
-    [SerializeField] private GameObject gameObject;
+    [SerializeField] private new GameObject gameObject;
 
     #region Public Methods
 

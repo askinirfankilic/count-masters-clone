@@ -55,10 +55,9 @@ public class PlayerController : MonoBehaviour
         {
             //starting object spawn routine
         }
-        
     }
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
     }
 
