@@ -55,8 +55,7 @@ public class PlayerController : MonoBehaviour
         {
             //starting object spawn routine
         }
-
-        SpawnAutomatedCharacter(100);
+        
     }
 
     private void Update()

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,8 @@ public class PlayerMovementController : MonoBehaviour
 
     public float speed = 1f;
     public float horizontalMultiplier = 1f;
-    
+    [SerializeField] private float movableLineBoundary = 10f;
+
     #endregion
 
     #region Private Fields
@@ -17,12 +19,21 @@ public class PlayerMovementController : MonoBehaviour
 
     #endregion
 
+    #region Properties
+
+    public float Horizontal
+    {
+        get => horizontal;
+        set => horizontal = value;
+    }
+
+    #endregion
+
     #region Unity Methods
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -35,7 +46,7 @@ public class PlayerMovementController : MonoBehaviour
 
     #region Private Methods
 
-    void Move()
+    private void Move()
     {
 #if UNITY_EDITOR
         var standaloneHorizontal = Input.GetAxisRaw("Horizontal");
@@ -43,16 +54,24 @@ public class PlayerMovementController : MonoBehaviour
         {
             this.horizontal = standaloneHorizontal;
         }
-        this.transform.Translate(this.horizontal * horizontalMultiplier, 0, speed * Time.deltaTime);
+
+
+        if (movableLineBoundary > Math.Abs(this.transform.position.x))
+        {
+            this.transform.Translate(this.Horizontal * horizontalMultiplier, 0, speed * Time.deltaTime);
+        }
+        else
+        {
+            this.transform.Translate(-this.transform.position.x / movableLineBoundary * horizontalMultiplier, 0, speed * Time.deltaTime);
+        }
 
         ResetHorizontal();
-
 #endif
     }
 
     private void ResetHorizontal()
     {
-        horizontal = 0f;
+        Horizontal = 0f;
     }
 
     #endregion

@@ -653,6 +653,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3807715115919287880, guid: e9809645d44092f4bb205b6bfd072564,
+        type: 3}
+      propertyPath: movableLineBoundary
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3807715115919287881, guid: e9809645d44092f4bb205b6bfd072564,
         type: 3}
       propertyPath: m_Name
