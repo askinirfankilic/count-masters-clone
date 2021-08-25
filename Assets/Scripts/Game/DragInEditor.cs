@@ -5,13 +5,13 @@ using UnityEngine;
 public class DragInEditor : MonoBehaviour
 {
     [DraggablePoint] public Vector3 spawnPosition;
-    [SerializeField] private GameObject automatedCharacterPrefab;
+    [SerializeField] private GameObject gameObject;
 
     #region Public Methods
 
     public void Spawn()
     {
-        Instantiate(automatedCharacterPrefab, spawnPosition, Quaternion.identity);
+        Instantiate(gameObject, spawnPosition, Quaternion.identity);
     }
 
     #endregion

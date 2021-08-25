@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.7
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,13 +114,13 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.23333333
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 0d4ec18213c9cde4781b3eab774f184a, type: 2}
 --- !u!1001 &165957721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -212,7 +212,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &261059215
 MeshCollider:
@@ -796,6 +796,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 811233686}
     m_Modifications:
+    - target: {fileID: 1915921885, guid: 3b31130f41f9f8b4ab363f2e43ecb7fe, type: 3}
+      propertyPath: destination
+      value: 
+      objectReference: {fileID: 811233686}
     - target: {fileID: 2826022412780142906, guid: 3b31130f41f9f8b4ab363f2e43ecb7fe,
         type: 3}
       propertyPath: m_RootOrder
