@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int automatedCharacterCount = 1;
     [SerializeField] private GameObject automatedCharacterPrefab;
     [SerializeField] private int maxAutomatedCharacterCount = 149;
+    [SerializeField] private InputField automatedCharCountField;
 
     private Queue<GameObject> automatedCharacterPool;
     private Stack<GameObject> activeAutomatedCharacters;
@@ -55,6 +57,11 @@ public class PlayerController : MonoBehaviour
         {
             //starting object spawn routine
         }
+    }
+
+    private void Update()
+    {
+        automatedCharCountField.text = AutomatedCharacterCount.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
