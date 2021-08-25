@@ -716,7 +716,7 @@ PrefabInstance:
     - target: {fileID: 3807715116350658161, guid: e9809645d44092f4bb205b6bfd072564,
         type: 3}
       propertyPath: m_Speed
-      value: 3.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9809645d44092f4bb205b6bfd072564, type: 3}

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -36,7 +37,10 @@ public class PlayerController : MonoBehaviour
         automatedCharacterPool = new Queue<GameObject>(maxAutomatedCharacterCount);
         for (int i = 0; i < maxAutomatedCharacterCount; i++)
         {
-            GameObject obj = Instantiate(automatedCharacterPrefab, this.transform);
+            GameObject obj = Instantiate(automatedCharacterPrefab,
+                AddNoiseToObjectPosition(AutomatedCharacterPrefab.transform),
+                Quaternion.identity, this.transform);
+
             obj.SetActive(false);
 
             automatedCharacterPool.Enqueue(obj);
@@ -51,6 +55,8 @@ public class PlayerController : MonoBehaviour
         {
             //starting object spawn routine
         }
+
+        SpawnAutomatedCharacter(100);
     }
 
     private void Update()
@@ -86,6 +92,13 @@ public class PlayerController : MonoBehaviour
         }
 
         AutomatedCharacterCount -= dismissAmount;
+    }
+
+    private Vector3 AddNoiseToObjectPosition(Transform objTrans)
+    {
+        Vector3 noisedPosition = new Vector3(objTrans.position.x + Random.Range(-0.5f, 0.5f), objTrans.position.y,
+            objTrans.position.z + Random.Range(-0.5f, 0.5f));
+        return noisedPosition;
     }
 
     #endregion
