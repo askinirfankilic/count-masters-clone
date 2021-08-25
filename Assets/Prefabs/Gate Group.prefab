@@ -2474,8 +2474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128ac7f2bbbc7af45b3e2d0ff464671e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  operation: 0
-  value: 0
+  operation: 1
+  value: 20
   playerController: {fileID: 0}
 --- !u!1 &8793081991885924981
 GameObject:
@@ -3699,7 +3699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   operation: 0
-  value: 0
+  value: 5
   playerController: {fileID: 0}
 --- !u!1 &8793081992379851384
 GameObject:
