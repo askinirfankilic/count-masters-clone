@@ -800,6 +800,10 @@ PrefabInstance:
       propertyPath: destination
       value: 
       objectReference: {fileID: 811233686}
+    - target: {fileID: 1915921886, guid: 3b31130f41f9f8b4ab363f2e43ecb7fe, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2826022412780142906, guid: 3b31130f41f9f8b4ab363f2e43ecb7fe,
         type: 3}
       propertyPath: m_RootOrder
