@@ -11,11 +11,12 @@ public class AutomatedCharacterController : MonoBehaviour
 
     private void Start()
     {
+        destination = transform.parent;
         agent = this.GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        agent.SetDestination(destination.position);
+        agent.SetDestination(destination.localPosition);
     }
 }

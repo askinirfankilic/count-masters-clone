@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxAutomatedCharacterCount = 149;
 
     private Queue<GameObject> automatedCharacterPool;
+    private Stack<GameObject> activeAutomatedCharacters;
 
     #endregion
 
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
 
             automatedCharacterPool.Enqueue(obj);
         }
+
+        activeAutomatedCharacters = new Stack<GameObject>(maxAutomatedCharacterCount);
     }
 
     private void Start()
@@ -65,7 +68,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject obj = automatedCharacterPool.Dequeue();
             obj.SetActive(true);
-            
+            activeAutomatedCharacters.Push(obj);
         }
 
 
@@ -77,10 +80,11 @@ public class PlayerController : MonoBehaviour
         //dismiss block
         for (int i = 0; i < dismissAmount; i++)
         {
-            
-            //dequeue
+            GameObject obj = activeAutomatedCharacters.Pop();
+            obj.SetActive(false);
+            automatedCharacterPool.Enqueue(obj);
         }
-        
+
         AutomatedCharacterCount -= dismissAmount;
     }
 
