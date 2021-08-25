@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     #region Private Fields
 
-    [SerializeField] private float automatedCharacterCount = 1;
+    [SerializeField] private int automatedCharacterCount = 1;
     [SerializeField] private GameObject automatedCharacterPrefab;
     [SerializeField] private int maxAutomatedCharacterCount = 149;
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     #region Properties
 
-    public float AutomatedCharacterCount
+    public int AutomatedCharacterCount
     {
         get => automatedCharacterCount;
         set => automatedCharacterCount = value;
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
 
     #region Private Methods
 
-    private void SpawnAutomatedCharacter(int spawnAmount)
+    public void SpawnAutomatedCharacter(int spawnAmount)
     {
         //spawn block
         for (int i = 0; i < spawnAmount; i++)
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
         AutomatedCharacterCount += spawnAmount;
     }
 
-    private void DismissAutomatedCharacter(int dismissAmount)
+    public void DismissAutomatedCharacter(int dismissAmount)
     {
         //dismiss block
         for (int i = 0; i < dismissAmount; i++)

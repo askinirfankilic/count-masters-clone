@@ -571,6 +571,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.9, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &811233687 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3807715115919287882, guid: e9809645d44092f4bb205b6bfd072564,
+    type: 3}
+  m_PrefabInstance: {fileID: 3807715116722116573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811233684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf46345e2d649c4faa6d38a4486c5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &844905735
 Mesh:
   m_ObjectHideFlags: 0
@@ -1419,6 +1431,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 410397135, guid: c1b5b42d572c25e4dbdf43bd61ddd91b, type: 3}
+      propertyPath: value
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 410397135, guid: c1b5b42d572c25e4dbdf43bd61ddd91b, type: 3}
+      propertyPath: operation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 410397135, guid: c1b5b42d572c25e4dbdf43bd61ddd91b, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 811233687}
+    - target: {fileID: 681746205, guid: c1b5b42d572c25e4dbdf43bd61ddd91b, type: 3}
+      propertyPath: value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 681746205, guid: c1b5b42d572c25e4dbdf43bd61ddd91b, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 811233687}
     - target: {fileID: 8793081991017063448, guid: c1b5b42d572c25e4dbdf43bd61ddd91b,
         type: 3}
       propertyPath: m_Mesh

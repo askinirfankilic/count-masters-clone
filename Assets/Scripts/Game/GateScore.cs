@@ -15,11 +15,27 @@ public class GateScore : MonoBehaviour
 
     [SerializeField] private Operation operation;
     [SerializeField] private int value;
+    [SerializeField] private PlayerController playerController;
+    private SpriteRenderer background;
 
     #endregion
 
     private void Start()
     {
-        throw new NotImplementedException();
+        background = this.GetComponentInChildren<SpriteRenderer>();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        background.enabled = false;
+        if (operation == Operation.Add)
+        {
+            playerController.SpawnAutomatedCharacter(value);
+        }
+        else if (operation == Operation.Multiply)
+        {
+            int spawnCount = (value - 1) * playerController.AutomatedCharacterCount;
+            playerController.SpawnAutomatedCharacter(spawnCount);
+        }
     }
 }
