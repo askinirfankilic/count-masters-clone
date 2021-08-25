@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float automatedCharacterCount = 1;
     [SerializeField] private GameObject automatedCharacterPrefab;
+    [SerializeField] private int maxAutomatedCharacterCount = 149;
+
+    private Queue<GameObject> automatedCharacterPool;
 
     #endregion
 
@@ -26,6 +29,18 @@ public class PlayerController : MonoBehaviour
 
 
     #region Unity Methods
+
+    private void Awake()
+    {
+        automatedCharacterPool = new Queue<GameObject>(maxAutomatedCharacterCount);
+        for (int i = 0; i < maxAutomatedCharacterCount; i++)
+        {
+            GameObject obj = Instantiate(automatedCharacterPrefab, this.transform);
+            obj.SetActive(false);
+
+            automatedCharacterPool.Enqueue(obj);
+        }
+    }
 
     private void Start()
     {
@@ -45,8 +60,14 @@ public class PlayerController : MonoBehaviour
 
     private void SpawnAutomatedCharacter(int spawnAmount)
     {
-        
         //spawn block
+        for (int i = 0; i < spawnAmount; i++)
+        {
+            GameObject obj = automatedCharacterPool.Dequeue();
+            obj.SetActive(true);
+            
+        }
+
 
         AutomatedCharacterCount += spawnAmount;
     }
@@ -54,7 +75,12 @@ public class PlayerController : MonoBehaviour
     private void DismissAutomatedCharacter(int dismissAmount)
     {
         //dismiss block
-
+        for (int i = 0; i < dismissAmount; i++)
+        {
+            
+            //dequeue
+        }
+        
         AutomatedCharacterCount -= dismissAmount;
     }
 
