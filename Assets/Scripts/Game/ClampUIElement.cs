@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ClampUIElement : MonoBehaviour
+namespace Game
 {
-    #region Private Fields
-
-    [SerializeField] private InputField automatedCharCountField;
-
-    #endregion
-
-    void Update()
+    public class ClampUIElement : MonoBehaviour
     {
-        Vector3 worldPos = Camera.main.WorldToScreenPoint(this.transform.position);
-        automatedCharCountField.transform.position = worldPos;
+        #region Private Fields
+
+        [SerializeField] private InputField automatedCharCountField;
+
+        #endregion
+
+        void Update()
+        {
+            Vector3 worldPos = Camera.main.WorldToScreenPoint(this.transform.position);
+            automatedCharCountField.transform.position = worldPos;
+        }
     }
 }

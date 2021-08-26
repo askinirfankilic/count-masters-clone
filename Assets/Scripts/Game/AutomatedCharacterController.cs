@@ -4,19 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AutomatedCharacterController : MonoBehaviour
+namespace Game
 {
-    [SerializeField] private Transform destination;
-    private NavMeshAgent agent;
-
-    private void Start()
+    public class AutomatedCharacterController : MonoBehaviour
     {
-        destination = transform.parent;
-        agent = this.GetComponent<NavMeshAgent>();
-    }
+        [SerializeField] private Transform destination;
+        private NavMeshAgent agent;
 
-    private void Update()
-    {
-        agent.SetDestination(destination.localPosition);
+        private void Start()
+        {
+            destination = transform.parent;
+            agent = this.GetComponent<NavMeshAgent>();
+        }
+
+        private void Update()
+        {
+            agent.SetDestination(destination.localPosition);
+        }
     }
 }
+

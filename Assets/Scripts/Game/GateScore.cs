@@ -3,39 +3,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Operation
+namespace Game
 {
-    Multiply,
-    Add
-};
-
-public class GateScore : MonoBehaviour
-{
-    #region Private Fields
-
-    [SerializeField] private Operation operation;
-    [SerializeField] private int value;
-    [SerializeField] private PlayerController playerController;
-    private SpriteRenderer background;
-
-    #endregion
-
-    private void Start()
+    enum Operation
     {
-        background = this.GetComponentInChildren<SpriteRenderer>();
-    }
+        Multiply,
+        Add
+    };
 
-    private void OnTriggerEnter(Collider other)
+    public class GateScore : MonoBehaviour
     {
-        background.enabled = false;
-        if (operation == Operation.Add)
+        #region Private Fields
+
+        [SerializeField] private Operation operation;
+        [SerializeField] private int value;
+        [SerializeField] private PlayerController playerController;
+        private SpriteRenderer background;
+
+        #endregion
+
+        private void Start()
         {
-            playerController.SpawnAutomatedCharacter(value);
+            background = this.GetComponentInChildren<SpriteRenderer>();
         }
-        else if (operation == Operation.Multiply)
+
+        private void OnTriggerEnter(Collider other)
         {
-            int spawnCount = (value - 1) * playerController.AutomatedCharacterCount;
-            playerController.SpawnAutomatedCharacter(spawnCount);
+            background.enabled = false;
+            if (operation == Operation.Add)
+            {
+                playerController.SpawnAutomatedCharacter(value);
+            }
+            else if (operation == Operation.Multiply)
+            {
+                int spawnCount = (value - 1) * playerController.AutomatedCharacterCount;
+                playerController.SpawnAutomatedCharacter(spawnCount);
+            }
         }
     }
 }
