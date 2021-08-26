@@ -214,6 +214,7 @@ MonoBehaviour:
   speed: 10
   horizontalMultiplier: 0.25
   movableLineBoundary: 10
+  joystick: {fileID: 0}
 --- !u!114 &3807715115919287882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,6 +278,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.83
       objectReference: {fileID: 0}
+    - target: {fileID: 6933414018886903875, guid: 150265bc1221a82439350edc8e2b2915,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e1cd72fdbff871428da12d310bac3c9, type: 2}
     - target: {fileID: 8547231141300829700, guid: 150265bc1221a82439350edc8e2b2915,
         type: 3}
       propertyPath: m_Name
