@@ -13,10 +13,14 @@ namespace Game
 
         #endregion
 
+        #region Unity Methods
+
         void Update()
         {
             Vector3 worldPos = Camera.main.WorldToScreenPoint(this.transform.position);
             automatedCharCountField.transform.position = worldPos;
         }
+
+        #endregion
     }
 }
