@@ -1217,7 +1217,7 @@ GameObject:
   - component: {fileID: 3430502372848391904}
   m_Layer: 0
   m_Name: Automated Character
-  m_TagString: Untagged
+  m_TagString: Bot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1265,7 +1265,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8547231141300829700}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.7
   m_Height: 3
@@ -1284,6 +1284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {fileID: 3807715115919287883, guid: e9809645d44092f4bb205b6bfd072564,
+    type: 3}
+  playerController: {fileID: 3807715115919287882, guid: e9809645d44092f4bb205b6bfd072564,
     type: 3}
 --- !u!195 &3430502372848391904
 NavMeshAgent:

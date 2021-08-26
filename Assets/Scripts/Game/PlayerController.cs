@@ -15,9 +15,10 @@ namespace Game
         [SerializeField] private GameObject automatedCharacterPrefab;
         [SerializeField] private int maxAutomatedCharacterCount = 149;
         [SerializeField] private InputField automatedCharCountField;
+        [SerializeField] private GameObject firstAutomatedCharacter;
 
-        private Queue<GameObject> automatedCharacterPool;
-        private Stack<GameObject> activeAutomatedCharacters;
+        [SerializeField] private Queue<GameObject> automatedCharacterPool;
+        
 
         #endregion
 
@@ -50,15 +51,11 @@ namespace Game
                 automatedCharacterPool.Enqueue(obj);
             }
 
-            activeAutomatedCharacters = new Stack<GameObject>(maxAutomatedCharacterCount);
         }
 
         private void Start()
         {
-            if (automatedCharacterCount > 1)
-            {
-                //starting object spawn routine
-            }
+            
         }
 
         private void Update()
@@ -72,7 +69,9 @@ namespace Game
 
         #endregion
 
-        #region Private Methods
+
+
+        #region Public Methods
 
         public void SpawnAutomatedCharacter(int spawnAmount)
         {
@@ -81,26 +80,22 @@ namespace Game
             {
                 GameObject obj = automatedCharacterPool.Dequeue();
                 obj.SetActive(true);
-                activeAutomatedCharacters.Push(obj);
             }
 
 
             AutomatedCharacterCount += spawnAmount;
         }
-
-        public void DismissAutomatedCharacter(int dismissAmount)
+        
+        public void DismissAutomatedCharacter(GameObject automatedCharacter)
         {
-            //dismiss block
-            for (int i = 0; i < dismissAmount; i++)
-            {
-                GameObject obj = activeAutomatedCharacters.Pop();
-                obj.SetActive(false);
-                automatedCharacterPool.Enqueue(obj);
-            }
+            automatedCharacterPool.Enqueue(automatedCharacter);
+            
 
-            AutomatedCharacterCount -= dismissAmount;
+            AutomatedCharacterCount -= 1;
         }
 
+        #endregion
+         #region Private Methods
         private Vector3 AddNoiseToObjectPosition(Transform objTrans)
         {
             Vector3 noisedPosition = new Vector3(objTrans.position.x + Random.Range(-0.5f, 0.5f), objTrans.position.y,

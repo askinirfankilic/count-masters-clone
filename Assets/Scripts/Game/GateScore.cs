@@ -29,15 +29,18 @@ namespace Game
 
         private void OnTriggerEnter(Collider other)
         {
-            background.enabled = false;
-            if (operation == Operation.Add)
+            if (other.CompareTag("Player"))
             {
-                playerController.SpawnAutomatedCharacter(value);
-            }
-            else if (operation == Operation.Multiply)
-            {
-                int spawnCount = (value - 1) * playerController.AutomatedCharacterCount;
-                playerController.SpawnAutomatedCharacter(spawnCount);
+                background.enabled = false;
+                if (operation == Operation.Add)
+                {
+                    playerController.SpawnAutomatedCharacter(value);
+                }
+                else if (operation == Operation.Multiply)
+                {
+                    int spawnCount = (value - 1) * playerController.AutomatedCharacterCount;
+                    playerController.SpawnAutomatedCharacter(spawnCount);
+                }
             }
         }
     }

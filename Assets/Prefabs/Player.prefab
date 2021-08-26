@@ -232,6 +232,7 @@ MonoBehaviour:
     type: 3}
   maxAutomatedCharacterCount: 250
   automatedCharCountField: {fileID: 0}
+  firstAutomatedCharacter: {fileID: 0}
 --- !u!54 &811233685
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -273,6 +274,11 @@ PrefabInstance:
       propertyPath: destination
       value: 
       objectReference: {fileID: 3807715115919287883}
+    - target: {fileID: 1286579114160455913, guid: 150265bc1221a82439350edc8e2b2915,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 3807715115919287882}
     - target: {fileID: 3430502372848391904, guid: 150265bc1221a82439350edc8e2b2915,
         type: 3}
       propertyPath: m_Radius
