@@ -43,7 +43,7 @@ namespace Game
         void Update()
         {
             this.Move();
-            AdjustMovableLineBoundary();
+            //AdjustMovableLineBoundary();
         }
 
         #endregion
