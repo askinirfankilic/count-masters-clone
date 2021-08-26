@@ -18,7 +18,8 @@ namespace Game
         [SerializeField] private GameObject firstAutomatedCharacter;
 
         [SerializeField] private Queue<GameObject> automatedCharacterPool;
-        
+
+        private bool isLost = false;
 
         #endregion
 
@@ -31,6 +32,12 @@ namespace Game
         }
 
         public GameObject AutomatedCharacterPrefab => automatedCharacterPrefab;
+
+        public bool IsLost
+        {
+            get => isLost;
+            set => isLost = value;
+        }
 
         #endregion
 
@@ -50,17 +57,19 @@ namespace Game
 
                 automatedCharacterPool.Enqueue(obj);
             }
-
         }
 
         private void Start()
         {
-            
         }
 
         private void Update()
         {
             automatedCharCountField.text = AutomatedCharacterCount.ToString();
+            if (AutomatedCharacterCount <= 0)
+            {
+                isLost = true;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -68,7 +77,6 @@ namespace Game
         }
 
         #endregion
-
 
 
         #region Public Methods
@@ -86,17 +94,19 @@ namespace Game
 
             AutomatedCharacterCount += spawnAmount;
         }
-        
+
         public void DismissAutomatedCharacter(GameObject automatedCharacter)
         {
             automatedCharacterPool.Enqueue(automatedCharacter);
-            
+
 
             AutomatedCharacterCount -= 1;
         }
 
         #endregion
-         #region Private Methods
+
+        #region Private Methods
+        
         private Vector3 AddNoiseToObjectPosition(Transform objTrans)
         {
             Vector3 noisedPosition = new Vector3(objTrans.position.x + Random.Range(-0.5f, 0.5f), objTrans.position.y,

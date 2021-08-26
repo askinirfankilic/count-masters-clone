@@ -24,6 +24,14 @@ namespace Game.UI
 
         #endregion
 
+        #region Unity Methods
+
+        private void Update()
+        {
+            if(playerController.IsLost) LoadLoseUI();
+        }
+
+        #endregion
         #region Public Methods
 
         public void StartButton()
@@ -32,6 +40,15 @@ namespace Game.UI
             gameplayUI.SetActive(true);
             playerMovementController.IsMovable = true;
             firstAutomatedAnimator.SetTrigger("IsMoving");
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void LoadLoseUI()
+        {
+            Debug.Log("lost");
         }
 
         #endregion

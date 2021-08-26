@@ -55,6 +55,11 @@ namespace Game
             {
                 this.Move();
             }
+
+            if (playerController.IsLost)
+            {
+                isMovable = false;
+            }
         }
 
         #endregion

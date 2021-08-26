@@ -11,8 +11,20 @@ namespace Game
         #region Private Fields
 
         [SerializeField] private Transform destination;
+        [SerializeField] private ParticleSystem toonSplatParticle;
         private PlayerController playerController;
         private NavMeshAgent agent;
+        private bool isDead = false;
+
+        #endregion
+
+        #region Properties
+
+        public bool IsDead
+        {
+            get => isDead;
+            set => isDead = value;
+        }
 
         #endregion
 
@@ -25,6 +37,7 @@ namespace Game
             agent = this.GetComponent<NavMeshAgent>();
         }
 
+
         private void Update()
         {
             agent.SetDestination(destination.localPosition);
@@ -35,9 +48,20 @@ namespace Game
             if (other.CompareTag("Pylon"))
             {
                 playerController.DismissAutomatedCharacter(this.gameObject);
-                
-                this.gameObject.SetActive(false);
+                isDead = true;
+                StartCoroutine(nameof(PlayParticleCoroutine));
             }
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        IEnumerator PlayParticleCoroutine()
+        {
+            toonSplatParticle.Play();
+            yield return new WaitForSeconds(1f);
+            this.gameObject.SetActive(false);
         }
 
         #endregion

@@ -3198,6 +3198,16 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3707447532177040858, guid: e9809645d44092f4bb205b6bfd072564,
+        type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707447532177040858, guid: e9809645d44092f4bb205b6bfd072564,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3807715114768113630, guid: e9809645d44092f4bb205b6bfd072564,
         type: 3}
       propertyPath: m_LocalPosition.x
