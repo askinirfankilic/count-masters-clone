@@ -80,6 +80,7 @@ namespace Game
             {
                 GameObject obj = automatedCharacterPool.Dequeue();
                 obj.SetActive(true);
+                obj.GetComponent<Animator>().SetTrigger("IsMoving");
             }
 
 

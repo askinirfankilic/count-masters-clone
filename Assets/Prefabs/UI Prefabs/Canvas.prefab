@@ -353,6 +353,9 @@ MonoBehaviour:
     type: 3}
   playerMovementController: {fileID: 3807715115919287880, guid: e9809645d44092f4bb205b6bfd072564,
     type: 3}
+  firstAutomatedAnimator: {fileID: 0}
+  automatedCharacterAnimator: {fileID: 3113712510778867396, guid: 150265bc1221a82439350edc8e2b2915,
+    type: 3}
 --- !u!1 &9165225974126027844
 GameObject:
   m_ObjectHideFlags: 0

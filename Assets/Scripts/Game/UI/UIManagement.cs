@@ -20,6 +20,8 @@ namespace Game.UI
         [SerializeField]
         private PlayerMovementController playerMovementController;
 
+        [SerializeField] private Animator firstAutomatedAnimator;
+
         #endregion
 
         #region Public Methods
@@ -29,6 +31,7 @@ namespace Game.UI
             homeUI.SetActive(false);
             gameplayUI.SetActive(true);
             playerMovementController.IsMovable = true;
+            firstAutomatedAnimator.SetTrigger("IsMoving");
         }
 
         #endregion

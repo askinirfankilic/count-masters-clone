@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 89591785}
   m_Layer: 0
-  m_Name: Gate Group (3)
+  m_Name: Gate Group (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -393,7 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 211197010}
   m_Layer: 0
-  m_Name: Gate Group (4)
+  m_Name: Gate Group (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -497,6 +497,12 @@ Transform:
 --- !u!1 &279037552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4063135706877154414, guid: e9809645d44092f4bb205b6bfd072564,
+    type: 3}
+  m_PrefabInstance: {fileID: 3807715116722116573}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &279037556 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7334345218442122414, guid: e9809645d44092f4bb205b6bfd072564,
     type: 3}
   m_PrefabInstance: {fileID: 3807715116722116573}
   m_PrefabAsset: {fileID: 0}
@@ -2627,7 +2633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   operation: 1
-  value: 5
+  value: 30
   playerController: {fileID: 811233687}
 --- !u!65 &1469610999
 BoxCollider:
@@ -4245,9 +4251,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9165225973754487420, guid: 1f638fd381c0a624b9e1ff7a4b16277a,
         type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 279037556}
+    - target: {fileID: 9165225973754487420, guid: 1f638fd381c0a624b9e1ff7a4b16277a,
+        type: 3}
       propertyPath: playerController
       value: 
       objectReference: {fileID: 811233687}
+    - target: {fileID: 9165225973754487420, guid: 1f638fd381c0a624b9e1ff7a4b16277a,
+        type: 3}
+      propertyPath: firstAutomatedAnimator
+      value: 
+      objectReference: {fileID: 279037556}
     - target: {fileID: 9165225973754487420, guid: 1f638fd381c0a624b9e1ff7a4b16277a,
         type: 3}
       propertyPath: playerMovementController
