@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2770481893545656287}
-  - component: {fileID: 2770481893545656284}
   - component: {fileID: 2770481893545656285}
+  - component: {fileID: 4822956324415946516}
   m_Layer: 0
   m_Name: Pylon Trap
   m_TagString: Pylon
@@ -42,19 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2770481893545656284
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2770481893545656286}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 11.167536, y: 3.5477247, z: 10.794849}
-  m_Center: {x: 0.25647926, y: 1.3559129, z: 1.0052471}
 --- !u!54 &2770481893545656285
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -71,6 +58,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &4822956324415946516
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770481893545656286}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 4.9310913
+  m_Height: 11.191885
+  m_Direction: 1
+  m_Center: {x: 0.8442569, y: 0.5672636, z: 0.8081131}
 --- !u!1001 &2770481893546813004
 PrefabInstance:
   m_ObjectHideFlags: 0
