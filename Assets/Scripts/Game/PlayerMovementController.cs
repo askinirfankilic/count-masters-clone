@@ -11,12 +11,15 @@ namespace Game
 
         public float speed = 1f;
         public float horizontalMultiplier = 1f;
-        [SerializeField] private float movableLineBoundary = 10f;
-        [SerializeField] private Joystick joystick;
 
         #endregion
 
         #region Private Fields
+
+        [SerializeField] private float movableLineBoundary = 10f;
+        [SerializeField] private Joystick joystick;
+        [SerializeField] private bool isMovable = false;
+
 
         private float horizontal = 0f;
         private PlayerController playerController;
@@ -31,6 +34,12 @@ namespace Game
             set => horizontal = value;
         }
 
+        public bool IsMovable
+        {
+            get => isMovable;
+            set => isMovable = value;
+        }
+
         #endregion
 
         #region Unity Methods
@@ -42,8 +51,10 @@ namespace Game
 
         void Update()
         {
-            this.Move();
-            //AdjustMovableLineBoundary();
+            if (IsMovable)
+            {
+                this.Move();
+            }
         }
 
         #endregion
@@ -80,6 +91,9 @@ namespace Game
             Horizontal = 0f;
         }
 
+        #region Deprecated Methods
+
+        [Obsolete]
         private void AdjustMovableLineBoundary()
         {
             if (playerController.AutomatedCharacterCount <= 20)
@@ -107,6 +121,8 @@ namespace Game
                 return;
             }
         }
+
+        #endregion
 
         #endregion
     }
