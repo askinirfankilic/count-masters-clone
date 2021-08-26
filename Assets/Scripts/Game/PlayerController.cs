@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject obj = Instantiate(automatedCharacterPrefab,
                 AddNoiseToObjectPosition(AutomatedCharacterPrefab.transform),
-                automatedCharacterPrefab.transform.rotation * Quaternion.Euler(0, 180f, 0), this.transform);
+                Quaternion.identity, this.transform);
 
             obj.SetActive(false);
 
