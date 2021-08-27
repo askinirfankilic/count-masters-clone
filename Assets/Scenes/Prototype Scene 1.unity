@@ -4681,6 +4681,16 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 811233687}
+    - target: {fileID: 7018124095706987658, guid: e9809645d44092f4bb205b6bfd072564,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7018124095706987658, guid: e9809645d44092f4bb205b6bfd072564,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9809645d44092f4bb205b6bfd072564, type: 3}
 --- !u!1001 &4044154570493804685
