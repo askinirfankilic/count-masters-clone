@@ -18,20 +18,20 @@ namespace Game
         [SerializeField] private Operation operation;
         [SerializeField] private int value;
         [SerializeField] private PlayerController playerController;
-        private SpriteRenderer background;
+        private GameObject background;
 
         #endregion
 
         private void Start()
         {
-            background = this.GetComponentInChildren<SpriteRenderer>();
+            background = this.GetComponentInChildren<Transform>().gameObject;
         }
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
-                background.enabled = false;
+                background.SetActive(false);
                 if (operation == Operation.Add)
                 {
                     playerController.SpawnAutomatedCharacter(value);
