@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Game;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,6 +10,7 @@ public class FinishLevel : MonoBehaviour
 {
     #region Private Fields
 
+    [SerializeField] private PlayerController playerController;
     private LinkedList<GameObject> activeCharacters;
     #endregion
     #region Unity Methods
@@ -24,7 +26,49 @@ public class FinishLevel : MonoBehaviour
             {
                 character.GetComponent<NavMeshAgent>().enabled = false;
             }
+
+            CreateHumanPyramid();
         }
+    }
+
+    #endregion
+
+    #region Private Methods
+
+    private void CreateHumanPyramid()
+    {
+        int tierCount = CalculateTierCount();
+        
+
+    }
+
+    private int CalculateTierCount()
+    {
+        int tierCount = 0;
+        int tierCoefficient = 1;
+        int characterCount = playerController.AutomatedCharacterCount;
+        bool isFirst = true;
+        while (characterCount > 0)
+        {
+            if (isFirst)
+            {
+                characterCount -= tierCoefficient;
+                isFirst = false;
+                tierCount++;
+            }
+            else
+            {
+                characterCount -= tierCoefficient;
+                isFirst = true;
+                tierCount++;
+                tierCoefficient++;
+            }
+            
+        }
+
+        tierCount--;
+        
+        return tierCount;
     }
 
     #endregion
