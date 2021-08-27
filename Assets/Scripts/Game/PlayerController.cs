@@ -22,6 +22,7 @@ namespace Game
         private Queue<GameObject> automatedCharacterPool;
     
         private bool isLost = false;
+        private bool isWin = false;
 
         #endregion
 
@@ -39,6 +40,12 @@ namespace Game
         {
             get => isLost;
             set => isLost = value;
+        }
+
+        public bool IsWin
+        {
+            get => isWin;
+            set => isWin = value;
         }
 
         public LinkedList<GameObject> ActiveAutomatedCharacters

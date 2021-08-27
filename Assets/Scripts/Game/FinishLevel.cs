@@ -42,6 +42,7 @@ public class FinishLevel : MonoBehaviour
             playerController.SetActiveAutomatedCharactersForDancing();
             
             CreateHumanPyramid();
+            playerController.IsWin = true;
         }
     }
 

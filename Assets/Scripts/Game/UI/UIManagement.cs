@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Game.UI
 {
@@ -29,6 +30,7 @@ namespace Game.UI
         private void Update()
         {
             if(playerController.IsLost) LoadLoseUI();
+            if(playerController.IsWin) LoadWinUI();
         }
 
         #endregion
@@ -42,13 +44,24 @@ namespace Game.UI
             firstAutomatedAnimator.SetTrigger("IsMoving");
         }
 
+        public void RestartButton()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
         #endregion
 
         #region Private Methods
 
         private void LoadLoseUI()
         {
-            Debug.Log("lost");
+            gameplayUI.SetActive(false);
+            loseUI.SetActive(true);
+        }
+
+        private void LoadWinUI()
+        {
+            gameplayUI.SetActive(false);
+            winUI.SetActive(true);
         }
 
         #endregion
