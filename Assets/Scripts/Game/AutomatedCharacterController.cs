@@ -45,7 +45,7 @@ namespace Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Pylon"))
+            if (other.CompareTag("Trap"))
             {
                 playerController.DismissAutomatedCharacter(this.gameObject);
                 isDead = true;
@@ -60,7 +60,7 @@ namespace Game
         IEnumerator PlayParticleCoroutine()
         {
             toonSplatParticle.Play();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             this.gameObject.SetActive(false);
         }
 

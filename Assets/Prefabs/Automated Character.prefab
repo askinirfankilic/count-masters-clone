@@ -1509,6 +1509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1408032326112930748, guid: 7db437d3b459ed54a91f5d327f317443,
         type: 3}
+      propertyPath: lengthInSec
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408032326112930748, guid: 7db437d3b459ed54a91f5d327f317443,
+        type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
@@ -1541,6 +1546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.minColor.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1408032326112930748, guid: 7db437d3b459ed54a91f5d327f317443,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[1].time
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1408032326113022492, guid: 7db437d3b459ed54a91f5d327f317443,
         type: 3}

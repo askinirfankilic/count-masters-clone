@@ -8,6 +8,7 @@ TagManager:
   - Bot
   - Pylon
   - Finish Line
+  - Trap
   layers:
   - Default
   - TransparentFX
