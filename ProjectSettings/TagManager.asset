@@ -7,6 +7,7 @@ TagManager:
   - Water
   - Bot
   - Pylon
+  - Finish Line
   layers:
   - Default
   - TransparentFX

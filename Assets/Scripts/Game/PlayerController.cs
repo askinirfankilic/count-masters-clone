@@ -16,9 +16,11 @@ namespace Game
         [SerializeField] private int maxAutomatedCharacterCount = 149;
         [SerializeField] private InputField automatedCharCountField;
         [SerializeField] private GameObject firstAutomatedCharacter;
+        
+        private LinkedList<GameObject> activeAutomatedCharacters;
 
-        [SerializeField] private Queue<GameObject> automatedCharacterPool;
-
+        private Queue<GameObject> automatedCharacterPool;
+    
         private bool isLost = false;
 
         #endregion
@@ -39,6 +41,11 @@ namespace Game
             set => isLost = value;
         }
 
+        public LinkedList<GameObject> ActiveAutomatedCharacters
+        {
+            get => activeAutomatedCharacters;
+            set => activeAutomatedCharacters = value;
+        }
         #endregion
 
 
@@ -46,7 +53,11 @@ namespace Game
 
         private void Awake()
         {
+            activeAutomatedCharacters = new LinkedList<GameObject>();
+            activeAutomatedCharacters.AddLast(firstAutomatedCharacter);
+            
             automatedCharacterPool = new Queue<GameObject>(maxAutomatedCharacterCount);
+            
             for (int i = 0; i < maxAutomatedCharacterCount; i++)
             {
                 GameObject obj = Instantiate(automatedCharacterPrefab,
@@ -87,6 +98,7 @@ namespace Game
             for (int i = 0; i < spawnAmount; i++)
             {
                 GameObject obj = automatedCharacterPool.Dequeue();
+                activeAutomatedCharacters.AddLast(obj);
                 obj.SetActive(true);
                 obj.GetComponent<Animator>().SetTrigger("IsMoving");
             }
@@ -98,9 +110,11 @@ namespace Game
         public void DismissAutomatedCharacter(GameObject automatedCharacter)
         {
             automatedCharacterPool.Enqueue(automatedCharacter);
-
-
-            AutomatedCharacterCount -= 1;
+            if (AutomatedCharacterCount > 0)
+            {
+                activeAutomatedCharacters.Remove(automatedCharacter);
+                AutomatedCharacterCount -= 1;
+            }
         }
 
         #endregion

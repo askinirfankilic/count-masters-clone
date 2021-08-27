@@ -22,6 +22,9 @@ namespace Game
 
         #endregion
 
+
+        #region Unity Methods
+
         private void Start()
         {
             background = this.GetComponentInChildren<Transform>().gameObject;
@@ -43,5 +46,7 @@ namespace Game
                 }
             }
         }
+
+        #endregion
     }
 }

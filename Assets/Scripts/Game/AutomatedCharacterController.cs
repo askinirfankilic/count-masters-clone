@@ -40,7 +40,7 @@ namespace Game
 
         private void Update()
         {
-            agent.SetDestination(destination.localPosition);
+            if (agent.enabled) agent.SetDestination(destination.localPosition);
         }
 
         private void OnTriggerEnter(Collider other)
