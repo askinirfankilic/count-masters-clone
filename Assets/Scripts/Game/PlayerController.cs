@@ -117,6 +117,13 @@ namespace Game
             }
         }
 
+        public void SetActiveAutomatedCharactersForDancing()
+        {
+            foreach (var character in activeAutomatedCharacters)
+            {
+                character.GetComponent<Animator>().SetTrigger("IsDancing");
+            }
+        }
         #endregion
 
         #region Private Methods

@@ -39,7 +39,8 @@ public class FinishLevel : MonoBehaviour
                 character.GetComponent<NavMeshAgent>().enabled = false;
                 listOfActiveCharacters.Add(character);
             }
-
+            playerController.SetActiveAutomatedCharactersForDancing();
+            
             CreateHumanPyramid();
         }
     }
@@ -84,12 +85,15 @@ public class FinishLevel : MonoBehaviour
             int floorCharacterCount = i;
             for (int j = 0; j < floorCharacterCount; j++)
             {
-                listOfActiveCharacters[firstFloorCharacterCount + counter].transform
-                    .DOMove(new Vector3(-5 + j + xOffset, yParam, 225), 1);
-                counter++;
-                listOfActiveCharacters[firstFloorCharacterCount + counter].transform
-                    .DOMove(new Vector3(-5 + j + xOffset, yParam + 3, 225), 1);
-                counter++;
+                if (firstFloorCharacterCount + counter + 5 < playerController.AutomatedCharacterCount)
+                {
+                    listOfActiveCharacters[firstFloorCharacterCount + counter].transform
+                        .DOMove(new Vector3(-5 + j + xOffset, yParam, 225), 1);
+                    counter++;
+                    listOfActiveCharacters[firstFloorCharacterCount + counter].transform
+                        .DOMove(new Vector3(-5 + j + xOffset, yParam + 3, 225), 1);
+                    counter++;
+                }
             }
 
             yParam += 6;
