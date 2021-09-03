@@ -15,4 +15,4 @@ Projeyi bitirince git hesabına yükleyip benimle paylaşmanı isteyeceğim,
 
 Unity version: 2019 LTS (2019.4.29f1)
 
-Bir sorun olursa mesaj atmaktan çekinmeyin
+Bir sorun olursa mesaj atmaktan çekinmeyin.
